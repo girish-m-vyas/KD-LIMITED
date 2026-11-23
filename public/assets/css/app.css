@@ -1,0 +1,104 @@
+/* KD Limited — storefront and admin styles (on top of Bootstrap 5) */
+:root {
+    --kd-ink: #1d1b19;
+    --kd-accent: #b4532a;
+    --kd-accent-soft: #f6e8df;
+    --kd-paper: #faf8f5;
+    --kd-line: #e7e2db;
+    --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    --bs-link-color-rgb: 180, 83, 42;
+    --bs-link-hover-color-rgb: 140, 60, 28;
+}
+
+body { background: var(--kd-paper); color: var(--kd-ink); }
+
+/* Width helpers (inline styles are blocked by the Content Security Policy) */
+.narrow-sm { max-width: 440px; }
+.narrow    { max-width: 640px; }
+.narrow-md { max-width: 760px; }
+.narrow-lg { max-width: 860px; }
+.w-qty     { width: 7rem; }
+.w-thumb   { width: 64px; }
+
+/* Brand */
+.brand { font-weight: 700; letter-spacing: .02em; display: inline-flex; align-items: center; gap: .35rem; }
+.brand-mark { background: var(--kd-ink); color: #fff; padding: .1rem .45rem; border-radius: .35rem; font-size: .95em; }
+.brand-word { color: var(--kd-ink); }
+.topbar { background: var(--kd-ink); color: #e9e4dc; }
+.topbar a { color: #fff; }
+.navbar .nav-link.active { color: var(--kd-accent); font-weight: 600; }
+
+/* Hero */
+.hero .carousel-item img { max-height: 440px; object-fit: cover; }
+.feature-box { background: #fff; border: 1px solid var(--kd-line); border-radius: .75rem; padding: 1.5rem; }
+.feature-box .bi { font-size: 1.5rem; color: var(--kd-accent); }
+.section-title { font-size: 1.4rem; font-weight: 700; }
+
+/* Product cards */
+.ratio-4x5 { --bs-aspect-ratio: 125%; }
+.product-card { border: 1px solid var(--kd-line); border-radius: .75rem; overflow: hidden; position: relative; transition: box-shadow .15s ease, transform .15s ease; }
+.product-card:hover { box-shadow: 0 .5rem 1.25rem rgba(29, 27, 25, .08); transform: translateY(-2px); }
+.product-thumb img, .product-main img { object-fit: cover; width: 100%; height: 100%; background: #efe9e1; }
+.product-main { border-radius: .75rem; overflow: hidden; }
+.product-label { position: absolute; top: .6rem; left: .6rem; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: .2rem .5rem; border-radius: 99px; z-index: 2; }
+.product-label.sale { background: #c0392b; color: #fff; }
+.product-label.new { background: var(--kd-ink); color: #fff; }
+.thumb-btn { border: 1px solid var(--kd-line); border-radius: .5rem; padding: 0; width: 72px; height: 90px; overflow: hidden; background: #fff; }
+.thumb-btn img { width: 100%; height: 100%; object-fit: cover; }
+.thumb-btn:focus-visible, .thumb-btn.active { outline: 2px solid var(--kd-accent); outline-offset: 2px; }
+.buy-box { background: #fff; border: 1px solid var(--kd-line); border-radius: .75rem; padding: 1.25rem; }
+
+/* Shop filters */
+.filter-panel { background: #fff; border: 1px solid var(--kd-line); border-radius: .75rem; padding: 1.25rem; }
+.filter-list li a { display: block; padding: .3rem .5rem; border-radius: .4rem; color: var(--kd-ink); text-decoration: none; }
+.filter-list li a:hover { background: var(--kd-paper); }
+.filter-list li a.active { background: var(--kd-accent-soft); color: var(--kd-accent); font-weight: 600; }
+
+/* Cart, checkout, account */
+.cart-thumb { width: 56px; height: 70px; object-fit: cover; border-radius: .4rem; }
+.summary-box, .auth-card { background: #fff; border: 1px solid var(--kd-line); border-radius: .75rem; padding: 1.5rem; }
+.empty-state { text-align: center; background: #fff; border: 1px dashed var(--kd-line); border-radius: .75rem; padding: 3rem 1rem; }
+.empty-state .bi { font-size: 2rem; color: var(--kd-accent); display: block; margin-bottom: .5rem; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #efe9e1; }
+.account-nav .list-group-item.active { background: var(--kd-ink); border-color: var(--kd-ink); }
+
+/* Order status pills */
+.status { display: inline-block; font-size: .78rem; font-weight: 600; padding: .2rem .6rem; border-radius: 99px; background: #eee; color: #444; white-space: nowrap; }
+.status-pending { background: #fff3cd; color: #7a5b00; }
+.status-payment_submitted { background: #dbeafe; color: #1e40af; }
+.status-paid { background: #dcfce7; color: #166534; }
+.status-shipped { background: #e0e7ff; color: #3730a3; }
+.status-delivered { background: #d1fae5; color: #065f46; }
+.status-cancelled { background: #fee2e2; color: #991b1b; }
+
+.site-footer { background: #fff; border-top: 1px solid var(--kd-line); }
+.site-footer h6 { font-weight: 700; }
+.site-footer a { color: var(--kd-ink); text-decoration: none; }
+.site-footer a:hover { color: var(--kd-accent); }
+
+.btn-dark { --bs-btn-bg: var(--kd-ink); --bs-btn-border-color: var(--kd-ink); }
+
+/* ---------- Admin ---------- */
+.admin-body { background: #f4f2ef; }
+.admin-sidebar { width: 240px; min-height: 100vh; background: var(--kd-ink); color: #cfc8bd; flex-shrink: 0; }
+.admin-sidebar .brand-mark { background: var(--kd-accent); }
+.admin-sidebar .brand-word { color: #fff; }
+.admin-sidebar .nav-link { color: #cfc8bd; border-radius: .4rem; padding: .45rem .75rem; }
+.admin-sidebar .nav-link:hover { color: #fff; background: rgba(255, 255, 255, .06); }
+.admin-sidebar .nav-link.active { color: #fff; background: rgba(255, 255, 255, .12); }
+.admin-sidebar .nav-section { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: #8f877b; margin: 1rem .75rem .25rem; }
+.admin-main { min-width: 0; }
+.admin-topbar { background: #fff; border-bottom: 1px solid var(--kd-line); }
+.admin-card { background: #fff; border: 1px solid var(--kd-line); border-radius: .75rem; }
+.stat-tile { background: #fff; border: 1px solid var(--kd-line); border-radius: .75rem; padding: 1.1rem 1.25rem; }
+.stat-tile .label { font-size: .8rem; color: #6c665e; text-transform: uppercase; letter-spacing: .05em; }
+.stat-tile .value { font-size: 1.75rem; font-weight: 700; }
+.admin-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: .4rem; background: #efe9e1; }
+.role-badge { font-size: .75rem; }
+.audit-details { font-size: .78rem; max-width: 380px; white-space: pre-wrap; word-break: break-word; }
+
+@media (max-width: 991.98px) {
+    .admin-sidebar { width: 100%; min-height: auto; }
+}
+
+.pagination { --bs-pagination-color: var(--kd-ink); --bs-pagination-active-bg: var(--kd-ink); --bs-pagination-active-border-color: var(--kd-ink); --bs-pagination-hover-color: var(--kd-accent); --bs-pagination-focus-color: var(--kd-accent); }
