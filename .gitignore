@@ -1,0 +1,25 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Runtime data — never commit databases, uploads, logs or SQL dumps
+storage/*.sqlite
+storage/*.sqlite-*
+storage/uploads/*/*
+!storage/uploads/*/.gitkeep
+storage/logs/*
+!storage/logs/.gitkeep
+storage/cache/*
+!storage/cache/.gitkeep
+*.sql.gz
+*.dump
+dump*.sql
+backup*.sql
+
+# Tooling
+/vendor/
+/node_modules/
+.DS_Store
+.idea/
+.vscode/
